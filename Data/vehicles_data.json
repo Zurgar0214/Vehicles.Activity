@@ -22,6 +22,40 @@
         "gasoline_capacity": 70,
         "doors_quantity": 2
       }
+    ],
+    "racers": [
+      {
+        "car": {
+          "maximun_speed": 150,
+          "gasoline_capacity": 60,
+          "doors_quantity": 4
+        },
+        "nickName": "Zurgar"
+      },
+      {
+        "car": {
+          "maximun_speed": 160,
+          "gasoline_capacity": 70,
+          "doors_quantity": 2
+        },
+        "nickName": "RamirezMuoz"
+      },
+      {
+        "car": {
+          "maximun_speed": 110,
+          "gasoline_capacity": 70,
+          "doors_quantity": 2
+        },
+        "nickName": "RafaMiami"
+      },
+      {
+        "car": {
+          "maximun_speed": 200,
+          "gasoline_capacity": 70,
+          "doors_quantity": 2
+        },
+        "nickName": "xxMakiaxx"
+      }
     ]
   }
   
