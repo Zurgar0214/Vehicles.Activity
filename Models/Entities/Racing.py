@@ -11,6 +11,9 @@ class Racing:
         self.name = name
 
     def add_player(self, player: Racer):
+        self.players = self.players + player
+
+    def add_player(self, player: list[Racer]):
         self.players.append(player)
 
     def calculateScore(self):

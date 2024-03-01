@@ -21,3 +21,5 @@ class Vehicle:
         '''
         self.current_speed = max(self.current_speed + decrease, 0)
         return self.current_speed
+    def __str__(self):
+        return f"Velocidad máxima: {self.maximun_speed}, capacidad gasolina {self.gasoline_capacity}"
