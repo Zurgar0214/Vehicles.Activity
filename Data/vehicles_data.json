@@ -1,41 +1,25 @@
 {
-    "vehicles": [
-      {
-        "maximun_speed": 120,
-        "gasoline_capacity": 50,
-        "current_speed": 0
-      },
-      {
-        "maximun_speed": 130,
-        "gasoline_capacity": 60,
-        "current_speed": 0
-      }
-    ],
     "motorcycles": [
       {
         "maximun_speed": 100,
         "gasoline_capacity": 30,
-        "current_speed": 0,
-        "type": "Sport"
+        "type": "Scooter"
       },
       {
         "maximun_speed": 110,
         "gasoline_capacity": 35,
-        "current_speed": 0,
-        "type": "Cruiser"
+        "type": "Sport"
       }
     ],
     "cars": [
       {
         "maximun_speed": 150,
         "gasoline_capacity": 60,
-        "current_speed": 0,
         "doors_quantity": 4
       },
       {
         "maximun_speed": 160,
         "gasoline_capacity": 70,
-        "current_speed": 0,
         "doors_quantity": 2
       }
     ]
