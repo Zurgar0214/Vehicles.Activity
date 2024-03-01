@@ -15,12 +15,8 @@ class Loader:
             data = json.load(file)
         return data
 
-    def load_data(self, json_file='vehicles_data.json'):
+    def load_data(self, json_file='vehicles_data.json') -> list[Vehicle]:
         data = self.load_json(json_file)
-
-        # Crear instancias de Vehicle
-        vehicles = [Vehicle(**v) for v in data["vehicles"]]
-
         # Crear instancias de Motorcycle
         motorcycles = [Motorcycle(**m) for m in data["motorcycles"]]
         for motorcycle in motorcycles:
@@ -29,4 +25,7 @@ class Loader:
         # Crear instancias de Car
         cars = [Car(**c) for c in data["cars"]]
 
-        return vehicles, motorcycles, cars
+        vehicles = cars
+        vehicles += motorcycles
+
+        return vehicles
