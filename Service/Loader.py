@@ -1,5 +1,7 @@
+from typing import List, Tuple
 import os
 import json
+from Models.Entities.Racer import Racer
 from Models.Entities.Vehicle import Vehicle
 from Models.Entities.Motorcycle import Motorcycle
 from Models.Entities.Car import Car
@@ -14,14 +16,15 @@ class Loader:
             data = json.load(file)
         return data
 
-    def load_data(self, json_file='vehicles_data.json') -> list[Vehicle]:
+    def load_data(self, json_file='vehicles_data.json') -> Tuple[List[Vehicle], List[Racer]]:
         data = self.load_json(json_file)
         # Crear instancias de Motorcycle
-        motorcycles = [Motorcycle(**m) for m in data["motorcycles"]]
+        motorcycles = [Motorcycle(**moto) for moto in data["motorcycles"]]
         # Crear instancias de Car
-        cars = [Car(**c) for c in data["cars"]]
-
+        cars = [Car(**car) for car in data["cars"]]
+        # Crear instancias de Racers
+        racers = [Racer(**racer) for racer in data["racers"]]        
         vehicles = cars
         vehicles += motorcycles
 
-        return vehicles
+        return vehicles, racers
