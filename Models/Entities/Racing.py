@@ -17,4 +17,6 @@ class Racing:
         for player in self.players:
             action: int = randint(1, 2,1)
             if action is 1:
-                player.
+                player.Action(True)
+            else:
+                player.Action(False)
