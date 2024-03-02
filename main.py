@@ -17,22 +17,22 @@ def startRace():
     for vehicle in vehicles:
         print(f"{index}- {vehicle}")
         index += 1
+    index = 1
     select : int =  int(input("Escribe tu elección: "))
     print(f"Vehículo seleccionado {vehicles[select-1]}")
     racer = Racer(vehicles[select-1],  input("Escribe tu nombre: "))
     racer.ChooseCar()
     racers = setCarsToRacers(vehicles, racers)
     select =  int(input("¿Cuántas vueltas quieres correr?: "))
-    racing = Racing(select, "Copa Pistón")
+    racing:Racing = Racing(select, "Copa Pistón")
     racing.add_player(racer)
     racing.add_players(racers)
 
     racing = RunRace(racing)
-    orderedRacers:list[Racer] = sorted(racing.players, key = racing.players.score)
-
     print("clasificación final: ")
-    for race in orderedRacers:
-        print(race)
+    for racer in sorted(racing.players, key = lambda racer : racer.score, reverse=True):
+        print(f"{index}. Nombre: {racer.nickName}, Puntuación: {racer.score}")
+        index += 1
     print("-"*70)
 
 
@@ -43,7 +43,8 @@ def RunRace(race: Racing) -> Racing:
         select:int = int(input("¿Qué desea hacer para esta vuelta? (1 -> acelerar) (2 -> frenar): "))
         race.calculateScore(select is 1)
         race.num_laps = race.num_laps - 1
-        RunRace(race)
+        race = RunRace(race)
+    return race
 
 if __name__ == "__main__":
     startRace()
