@@ -1,6 +1,8 @@
 
 # Actividad carreras
 
+# Elaborado por Juan Diego Varón Valencia y Juan Diego Ramírez Muñoz
+
 Este proyecto es creado como una actividad de POO usando python, una carrera. Para la asignatura Ingeniería de Software II 
 
 A continuación, el enunciado:
