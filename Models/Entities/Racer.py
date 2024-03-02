@@ -4,10 +4,10 @@ from Models.Entities.Vehicle import Vehicle
 
 
 class Racer:
-    def __init__(self, car :Vehicle,nickName :str ):
+    def __init__(self, car:Vehicle, nickName :str ):
         self.car = car
         self.nickName = nickName
-        self.score : int
+        self.score : int = 1
         self.isMainPlayer: bool = False
         
     def RandomTime(self):
@@ -15,9 +15,11 @@ class Racer:
     
     def Action(self, action: bool):
         if action:
-            self.car.speedUp()
+            self.car.speedUp(self.score)
+            self.RandomTime()
         else :
-            self.car.brake()
+            self.car.brake(self.score)
+            self.RandomTime()
 
     def ChooseCar(self):
         self.isMainPlayer = True

@@ -11,15 +11,17 @@ class Racing:
         self.name = name
 
     def add_player(self, player: Racer):
-        self.players = self.players + player
-
-    def add_player(self, player: list[Racer]):
         self.players.append(player)
 
-    def calculateScore(self):
+    def add_players(self, players: list[Racer]):
+        self.players.extend(players)
+
+    def calculateScore(self, speedUp: bool):
         for player in self.players:
-            action: int = randint(1, 2,1)
-            if action is 1:
+            action: int = randint(1,2)
+            if player.isMainPlayer:
+                player.Action(speedUp)
+            elif action is 1:
                 player.Action(True)
             else:
                 player.Action(False)
